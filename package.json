@@ -1,0 +1,32 @@
+{
+  "name": "cucumberjstest",
+  "version": "1.0.0",
+  "description": "CucumberJs Workshop",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/cucumber.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MB-Rubik/CucumberJsWorkshop.git"
+  },
+  "keywords": [
+    "cucumber",
+    "bdd",
+    "test",
+    "webdriver",
+    "selenium"
+  ],
+  "author": "Miguel A. Alonso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MB-Rubik/CucumberJsWorkshop/issues"
+  },
+  "homepage": "https://github.com/MB-Rubik/CucumberJsWorkshop#readme",
+  "dependencies": {
+    "cucumber": "^2.3.1"
+  }
+}
