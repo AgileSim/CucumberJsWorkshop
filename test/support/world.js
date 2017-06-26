@@ -15,6 +15,7 @@ const options = {
 
 const personas = require('./personas');
 const db = require('./db');
+const gps = require('./gps');
 
 function CustomWorld() {
 
@@ -22,11 +23,14 @@ function CustomWorld() {
     log.setLevel('debug');
 
     this.baseURL = "http://35.156.130.109:4200/";
-    this.driver = webdriverio.remote(options);
+    global.driver = webdriverio.remote(options);
 
     log.debug("Loading Sims...");
     db.selection = personas.load(path.resolve(__dirname + '/../../node_modules/sims'));
     this.db = db;
+
+    this.gps = require('./gps');
+    this.gps.setCurrent(require('../page_objects/login'));
 }
 
 defineSupportCode(function({setWorldConstructor}) {

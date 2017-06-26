@@ -3,12 +3,14 @@ var {defineSupportCode} = require('cucumber');
 defineSupportCode(function({Before, After}) {
 
     Before(function () {
-        return this.driver
+        return driver
             .init()
             .url(this.baseURL)
+            .then(()=>{log.debug("Driver initialized!")})
     });
 
     After(function() {
-        return this.driver.end();
+        return driver.end()
+            .then(()=>{log.debug("Driver closed!")})
     });
 });
