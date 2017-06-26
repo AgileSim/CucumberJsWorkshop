@@ -1,15 +1,16 @@
-var {defineSupportCode} = require('cucumber');
+'use strict';
+
+const {defineSupportCode} = require('cucumber');
 
 
-defineSupportCode(function ({Given, When, Then}) {
+defineSupportCode(function({Given, When, Then}) {
 
-
-    Given('a user with current accounts', function (callback) {
+    Then('he should view his global position', function (callback) {
         // Write code here that turns the phrase above into concrete actions
         callback(null, 'pending');
     });
 
-    When('he access his global position', function (callback) {
+    Then('he should see an error message', function (callback) {
         // Write code here that turns the phrase above into concrete actions
         callback(null, 'pending');
     });
@@ -18,5 +19,6 @@ defineSupportCode(function ({Given, When, Then}) {
         // Write code here that turns the phrase above into concrete actions
         callback(null, 'pending');
     });
+
 
 });
