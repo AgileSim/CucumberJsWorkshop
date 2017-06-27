@@ -51,7 +51,8 @@ let self = {
             validate: {
                 account: {
                     aliases: function (accounts) {
-                        return driver.getText(view.css.products.accounts.alias)
+                        return driver.waitForVisible(view.css.products.accounts.alias)
+                            .getText(view.css.products.accounts.alias)
                             .then((alias) => {
                                 log.debug("Got alias:      " + JSON.stringify(alias));
                                 let accAlias = accounts.map(acc => acc.alias);
@@ -61,7 +62,8 @@ let self = {
                             })
                     },
                     numbers: function (accounts) {
-                        return driver.getText(view.css.products.accounts.number)
+                        return driver.waitForVisible(view.css.products.accounts.number)
+                            .getText(view.css.products.accounts.number)
                             .then(number => {
                                 log.debug("Got numbers:      " + JSON.stringify(number));
                                 let accNumber = accounts.map(acc => acc.iban + " " + acc.number);
@@ -71,7 +73,8 @@ let self = {
                             })
                     },
                     balances: function (accounts) {
-                        return driver.getText(view.css.products.accounts.balance)
+                        return driver.waitForVisible(view.css.products.accounts.balance)
+                            .getText(view.css.products.accounts.balance)
                             .then(balances => {
                                 log.debug("Got balances:      " + JSON.stringify(balances));
                                 let accBalances = accounts.map(acc => acc.balance + " " + acc.currency);

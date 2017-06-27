@@ -11,8 +11,8 @@ defineSupportCode(function ({Given, When, Then}) {
 
     When('he introduces wrong credentials', function () {
         return gps.current.perform.enter.input.username("wrong")
-            .then(() => {return this.gps.current.perform.enter.input.password("credential")})
-            .then(() => { return this.gps.current.perform.click.button.enter()})
+            .then(() => { return gps.current.perform.enter.input.password("credential")} )
+            .then(() => {return gps.current.perform.click.button.enter()})
     });
 
     When('he access his global position', function () {
