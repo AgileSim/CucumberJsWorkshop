@@ -44,7 +44,8 @@ let self = {
             },
             label: {
                 errorMessage: function () {
-                    return driver.waitForVisible(view.css.errorMessages);
+                    return driver.waitForVisible(view.css.errorMessages)
+                        .getText(view.css.errorMessages).then((message) => { log.debug("Got error message: " + message)});
                 }
             },
             input: {
