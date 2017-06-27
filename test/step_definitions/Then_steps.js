@@ -3,17 +3,17 @@
 const {defineSupportCode} = require('cucumber');
 const poGlobalPosition = require('../page_objects/global_position');
 
-defineSupportCode(function({Given, When, Then}) {
+defineSupportCode(function({Then}) {
 
     Then('he should view his global position', function () {
         return poGlobalPosition.assert.visible.title();
     });
 
     Then('he should see an error message', function () {
-        return this.gps.current.assert.visible.label.errorMessage();
+        return gps.current.assert.visible.label.errorMessage();
     });
 
-    Then('he sould see his accounts each with this information:', function (table, callback) {
+    Then('he sould see his accounts each with this information:', function (table) {
         let fields = [[ 'account alias' ],
             [ 'account number' ],
             [ 'account balance with currency symbol' ]];
@@ -22,7 +22,7 @@ defineSupportCode(function({Given, When, Then}) {
             throw "Error! Check fields beacause have changed after development"
         }
 
-        return poGlobalPosition.assert.business.validate.product.accounts(db.user.products.accounts);
+        return gps.current.assert.business.validate.product.accounts(this.db.user.products.accounts);
     });
 
 

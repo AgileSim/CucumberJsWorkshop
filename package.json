@@ -29,7 +29,7 @@
   "devDependencies": {
     "chromedriver": "^2.30.1",
     "cucumber": "^2.3.1",
-    "sims": "git+https://github.com/AgileSim/Sims.git",
+    "sims": "git+https://github.com/AgileSim/Sims.git#e6444bd",
     "wdio-selenium-standalone-service": "0.0.9",
     "webdriverio": "^4.8.0",
     "decache": "^4.1.0",

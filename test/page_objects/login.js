@@ -1,7 +1,7 @@
 'use strict';
 
-const gps = require('../support/gps');
 const poGlobalPosition = require('./global_position');
+const assert = require('assert');
 
 let view = {
     css: {
@@ -27,10 +27,13 @@ let strings = {
 
 let self = {
 
+    user: undefined,
+
     go: function() {
         log.debug(" Init --->> page_objects/login.go() <<---");
         return self.assert.visible.title()
-            .then(()=>{ gps.setCurrent(self);});
+            .then(()=>{ gps.setCurrent(self);})
+            .then(()=>{ log.debug("GPS pointing to page object: login")});
     },
 
     assert: {
@@ -38,7 +41,7 @@ let self = {
             title: function() {
                 return driver.waitForVisible(view.css.title)
                     .getText(view.css.title).then((text) => {
-                        console.log("Expecting title: <" + strings.title + ">. Found title: <" + text + ">.");
+                        log.debug("Expecting title: <" + strings.title + ">. Found title: <" + text + ">.");
                         return assert(text === strings.title, "Error. Login page. Expenting title: <" + strings.title + ">. But found: <" + text + ">.");
                     });
             },

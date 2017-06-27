@@ -15,7 +15,7 @@ const options = {
 
 const personas = require('./personas');
 const db = require('./db');
-const gps = require('./gps');
+const _gps = require('./gps');
 
 function CustomWorld() {
 
@@ -29,8 +29,9 @@ function CustomWorld() {
     db.selection = personas.load(path.resolve(__dirname + '/../../node_modules/sims'));
     this.db = db;
 
-    this.gps = require('./gps');
-    this.gps.setCurrent(require('../page_objects/login'));
+    global.gps = _gps;
+    gps.setCurrent(require('../page_objects/login'));
+
 }
 
 defineSupportCode(function({setWorldConstructor}) {
