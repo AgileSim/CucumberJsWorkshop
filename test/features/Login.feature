@@ -3,10 +3,10 @@
 @Login
 Característica: : Login
 
-    As a user, I want to be able to log into my private area using my credentials
+    Como usuario de wikipedia, me gustaría poder consultar un artículo sobre la península de kamchatka
 
   @LoginKO
-  Escenario: : Login with invalid credentials
+  Escenario: : Kamchatka search
     Dado que estoy en la pagina de wikipedia
     Cuando busco el término "Kamchatka"
     Entonces debería ver una foto de la península
