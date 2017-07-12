@@ -1,16 +1,13 @@
+# language: es
+
 @Login
-Feature: Login
+Característica: : Login
 
     As a user, I want to be able to log into my private area using my credentials
 
   @LoginKO
-  Scenario: Login with invalid credentials
-    Given a user at login screen
-     When he introduces wrong credentials
-    Then he should see an error message
+  Escenario: : Login with invalid credentials
+    Dado que estoy en la pagina de wikipedia
+    Cuando busco el término "Kamchatka"
+    Entonces debería ver una foto de la península
 
-  @LoginOK
-  Scenario: Login with valid credentials
-    Given a user with valid credentials at login page
-     When he introduces his credentials
-     Then he should view his global position

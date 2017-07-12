@@ -3,18 +3,9 @@
 
 const {defineSupportCode} = require('cucumber');
 
-defineSupportCode(function({Given, When, Then}) {
+defineSupportCode(function({Given}) {
 
-    Given('a user at login screen', function (callback) {
-        // Write code here that turns the phrase above into concrete actions
-        callback(null, 'pending');
-    });
-
-    Given('a user with valid credentials at login page', function () {
-        this.db.filter((user) => true);
-    });
-
-    Given('a user with current accounts', function (callback) {
+    Given('que estoy en la pagina de wikipedia', function (callback) {
         // Write code here that turns the phrase above into concrete actions
         callback(null, 'pending');
     });
