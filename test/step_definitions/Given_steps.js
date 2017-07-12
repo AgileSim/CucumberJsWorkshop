@@ -2,12 +2,12 @@
 
 
 const {defineSupportCode} = require('cucumber');
+const poWelcome = require('../page_objects/welcome');
 
 defineSupportCode(function({Given}) {
 
-    Given('que estoy en la pagina de wikipedia', function (callback) {
-        // Write code here that turns the phrase above into concrete actions
-        callback(null, 'pending');
+    Given('que estoy en la pagina de wikipedia', function () {
+       return poWelcome.go();
     });
 
 });
